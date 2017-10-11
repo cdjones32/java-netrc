@@ -1,0 +1,43 @@
+#Ignore Mac index files
+.DS_Store
+
+# Ignore Vagrant working dir
+.vagrant
+
+# jEdit Backup files
+\#*.*\#
+
+#Ignore IntelliJ files
+.idea/
+*.iml
+out/
+
+#Ignore Gradle generated directories
+.gradle/
+bin/
+build/
+
+# Archives
+*.tar
+*.tar.gz
+*.zip
+
+# Ignore any keys which may have made their way into the tree
+*.key
+*.pem
+*.crt
+
+#Ignore HSQLDB generated files
+*.log
+
+# CSS Map files
+*.css.map
+
+#Ignore JRebel configuration files.
+rebel.xml
+classes/artifacts
+classes/production
+classes/test
+
+# Ignore cookies.json from the test module
+cookies.json
