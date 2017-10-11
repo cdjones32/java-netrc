@@ -5,8 +5,10 @@
 
 machine builder1.example.com
 	login jenkins
-    password secret
+    password secret   # You shouldn't do this
 
+    # login invalid_commented
+    # password invalid_commented
 
 machine builder2.example.com	login builder	 password buildpass
 

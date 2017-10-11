@@ -2,6 +2,7 @@ package co.cdjones.security.auth;
 
 import lombok.NonNull;
 import lombok.SneakyThrows;
+import lombok.val;
 
 import java.io.BufferedReader;
 import java.io.File;
@@ -30,6 +31,8 @@ public class NetrcParser {
     private long lastModified;
     private Map<String,Credentials> hosts = new HashMap<>();
 
+    // Pattern for detecting comments
+    private Pattern commentPattern = Pattern.compile("(^|\\s)#\\s");
 
     /**
      * getInstance.
@@ -99,6 +102,7 @@ public class NetrcParser {
             String password = null;
 
             ParseState state = ParseState.START;
+            Matcher commentMatcher = commentPattern.matcher(""); // Matcher to remove comments on each line before parsing
             Matcher matcher = NETRC_TOKEN.matcher("");
 
             while ((line = r.readLine()) != null) {
@@ -108,6 +112,13 @@ public class NetrcParser {
                         state = ParseState.REQ_KEY;
                     }
                     continue;
+                }
+
+                // Remove comments before paring
+                commentMatcher.reset(line);
+                if (commentMatcher.find()) {
+                    // We found a comment, so truncate the string from that point on and clean it up
+                    line = line.substring(0, commentMatcher.start()).trim();
                 }
 
                 matcher.reset(line);
