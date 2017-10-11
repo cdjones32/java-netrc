@@ -34,3 +34,7 @@ dependencies {
     compile "com.github.cdjones32:java-netrc:1.0.0"
 }
 ```
+
+### Credits
+The source for this was taken almost verbatim from the OpenSource Jenkins [git-client-plugin](https://github.com/jenkinsci/git-client-plugin/blob/9aba79579829a2826b2485b708ab6e724e1853b7/src/main/java/org/jenkinsci/plugins/gitclient/Netrc.java)
+
