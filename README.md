@@ -31,9 +31,12 @@ allprojects {
 }
 
 dependencies {
-    compile "com.github.cdjones32:java-netrc:1.0.0"
+    compile "com.github.cdjones32:java-netrc:1.0.1"
 }
 ```
+
+## History 
+1.0.1 - Fixed an issue where comments which were not at the start of a line would still be parsed.
 
 ### Credits
 The source for this was taken almost verbatim from the OpenSource Jenkins [git-client-plugin](https://github.com/jenkinsci/git-client-plugin/blob/9aba79579829a2826b2485b708ab6e724e1853b7/src/main/java/org/jenkinsci/plugins/gitclient/Netrc.java)
